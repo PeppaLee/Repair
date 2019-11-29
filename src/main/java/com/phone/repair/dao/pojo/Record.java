@@ -7,6 +7,7 @@ import java.util.Date;
 public class Record implements Serializable {
     private String recordId;
     private int empno;
+    private String ename;
     private Date startDate;
     private Date endDate;
     private BigDecimal charge;
@@ -17,8 +18,9 @@ public class Record implements Serializable {
         return "Record{" +
                 "recordId='" + recordId + '\'' +
                 ", empno=" + empno +
-                ", startDate='" + startDate + '\'' +
-                ", endDate='" + endDate + '\'' +
+                ", ename='" + ename + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
                 ", charge=" + charge +
                 ", result='" + result + '\'' +
                 '}';
@@ -38,6 +40,14 @@ public class Record implements Serializable {
 
     public void setEmpno(int empno) {
         this.empno = empno;
+    }
+
+    public String getEname() {
+        return ename;
+    }
+
+    public void setEname(String ename) {
+        this.ename = ename;
     }
 
     public Date getStartDate() {
@@ -72,9 +82,10 @@ public class Record implements Serializable {
         this.result = result;
     }
 
-    public Record(String recordId, int empno, Date startDate, Date endDate, BigDecimal charge, String result) {
+    public Record(String recordId, int empno, String ename, Date startDate, Date endDate, BigDecimal charge, String result) {
         this.recordId = recordId;
         this.empno = empno;
+        this.ename = ename;
         this.startDate = startDate;
         this.endDate = endDate;
         this.charge = charge;

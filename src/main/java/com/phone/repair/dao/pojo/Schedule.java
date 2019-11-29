@@ -5,18 +5,20 @@ import java.io.Serializable;
 public class Schedule implements Serializable {
     private String recordId;
     private int empno;
+    private String ename;
     private String repairSchedule;
     private String expectResult;
-    private String declare;
+    private String declares;
 
     @Override
     public String toString() {
         return "Schedule{" +
                 "recordId='" + recordId + '\'' +
                 ", empno=" + empno +
+                ", ename='" + ename + '\'' +
                 ", repairSchedule='" + repairSchedule + '\'' +
                 ", expectResult='" + expectResult + '\'' +
-                ", declare='" + declare + '\'' +
+                ", declares='" + declares + '\'' +
                 '}';
     }
 
@@ -36,6 +38,14 @@ public class Schedule implements Serializable {
         this.empno = empno;
     }
 
+    public String getEname() {
+        return ename;
+    }
+
+    public void setEname(String ename) {
+        this.ename = ename;
+    }
+
     public String getRepairSchedule() {
         return repairSchedule;
     }
@@ -52,20 +62,21 @@ public class Schedule implements Serializable {
         this.expectResult = expectResult;
     }
 
-    public String getDeclare() {
-        return declare;
+    public String getDeclares() {
+        return declares;
     }
 
-    public void setDeclare(String declare) {
-        this.declare = declare;
+    public void setDeclares(String declares) {
+        this.declares = declares;
     }
 
-    public Schedule(String recordId, int empno, String repairSchedule, String expectResult, String declare) {
+    public Schedule(String recordId, int empno, String ename, String repairSchedule, String expectResult, String declares) {
         this.recordId = recordId;
         this.empno = empno;
+        this.ename = ename;
         this.repairSchedule = repairSchedule;
         this.expectResult = expectResult;
-        this.declare = declare;
+        this.declares = declares;
     }
 
     public Schedule() {
